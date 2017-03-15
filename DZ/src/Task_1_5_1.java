@@ -18,9 +18,9 @@ public class Task_1_5_1 {
         System.out.println(b + " - Бинарный код веденного числа");
         System.out.println(m + " - Последняя цифра бинарного кода");
         if (m != 1){
-            System.out.println("Вы ввели чётное число");
+            System.out.print("Вы ввели чётное число");
         }
-        else System.out.println("Вы ввели нечётное число");
+        else System.out.print("Вы ввели нечётное число");
 
     }
 }
