@@ -9,6 +9,7 @@ public class Task_2_6 {
 
         Scanner num = new Scanner(System.in);
         int a = num.nextInt();
+            a = Math.abs(a);
 
 
         if ((a%2)==0){
