@@ -21,7 +21,7 @@ public class Task_2_6 {
                 if((a%i)!=0)
                     continue;
 
-                System.out.print(i + "  ");}
+                System.out.println(i);}
 
 
         }else System.out.println("Делители введненного числа 1 и " + a);
