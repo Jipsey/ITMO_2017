@@ -1,5 +1,8 @@
-package Task2.part_3;
+/*  Создайте программу, вычисляющую факториал натурального числа n, которое
+    пользователь введёт с клавиатуры.
+ */
 
+package Task2.part_3;
 
 public class Task_2_5 {
     public static void main(String[] args) {

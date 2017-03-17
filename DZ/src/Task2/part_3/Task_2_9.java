@@ -1,3 +1,7 @@
+/*  Для введённого пользователем с клавиатуры натурального числа посчитайте сумму всех
+    его цифр (заранее не известно сколько цифр будет в числе).
+ */
+
 package Task2.part_3;
 
 import java.util.Scanner;
@@ -18,7 +22,7 @@ public class Task_2_9 {
             n++;
             int y = Integer.parseInt(d);
             int sum = x + y;
-            x=sum;
+                x=sum;
             if (i==b-1){
             System.out.println(sum + " - сумма чисел");}
         }
