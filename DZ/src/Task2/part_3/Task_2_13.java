@@ -1,4 +1,3 @@
-package Task2.part_3;
 
 /* В американской армии считается несчастливым число 13, а в японской — 4. Перед
    международными учениями штаб российской армии решил исключить номера боевой
@@ -8,6 +7,7 @@ package Task2.part_3;
    придётся исключить?
  */
 
+package Task2.part_3;
     public class Task_2_13 {
         public static void main(String[] args) {
 

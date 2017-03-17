@@ -36,7 +36,7 @@ public class Task_2_10 {
                      if (i==(t.length-1)){System.out.println();}}}
 
             if (t[m-2]==9 && t[m-1]==9 && t[m-3]!=9 )
-            {t[m-2]=t[m-1]=t[m-3]++;
+            {t[m-2]=t[m-1]=0;t[m-3]++;
                  for (int i = 0; i <m ; i++){System.out.print(" " + t[i]);
                      if (i==(t.length-1)){System.out.println();}}}
 
