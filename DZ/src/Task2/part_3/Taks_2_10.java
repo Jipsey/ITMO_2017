@@ -16,7 +16,7 @@ public class Taks_2_10 {
         for (int i = 1; i <1000000 ; i++) {
 
 
-        String n = String.format("%06d\n",i);
+        String n = String.format("%06d",i);
 
                 int v1= Integer.parseInt(n.substring(0,1));
                 int v2= Integer.parseInt(n.substring(1,2));
