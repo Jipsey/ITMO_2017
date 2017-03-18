@@ -9,56 +9,31 @@ package Task2.part_3;
 public class Task_2_12 {
     public static void main(String[] args) {
 
-        int n =4; // количество цифр в номере
-        int t[] = new int[n] ;
-        int m = t.length;
-        int r = 1;// разряд
+        int m=0; //минуты
+        int h=0; //часы
+
 
         int x =0; // счётчик совпадений
+        String n;
 
-        for (int j = 0; j < 1000; j++) {
-            t[3]++;
+        while(h<= 23&& m<=59){
 
-            if( t[0]==t[3] && t[1]==t[2]){
-                System.out.println("--- Совпадение комбинации цифр ---");x++;}
+            m++;
 
+            if (h==23 && m ==59){ break;}
+            if (m == 60){h++; m=0; }
 
-            for (int i = 0; i <m ; i++){System.out.print(" " + t[i]) ;
-                if (i==(t.length-1)){System.out.println();}}
+            n = String.format("%02d : %02d",h,m);
+            int m1= Integer.parseInt(n.substring(5,6));
+            int m2= Integer.parseInt(n.substring(6));
 
-            if (t[3]==9 && t[2]!=6)
-            {t[3]=0; t[2]++;
-                for (int i = 0; i <m ; i++){System.out.print(" " + t[i]);
-                    if (i==(t.length-1)){System.out.println();}}}
+            int h1= Integer.parseInt(n.substring(0,1));
+            int h2= Integer.parseInt(n.substring(1,2));
 
-            if (t[2]==6 && t[3]==0 && t[1]!=3 && t[0]!=2 )
-            {t[3]=t[2]=0; t[1]++;
-                for (int i = 0; i <m ; i++){System.out.print(" " + t[i]);
-                    if (i==(t.length-1)){System.out.println();}}}
-                    else if (t[2]==6 && t[3]==0 && t[1]==3 && t[0]!=2 )
-                    {t[3]=t[2]=0; t[1]++;
-                    for (int i = 0; i <m ; i++){System.out.print(" " + t[i]);
-                    if (i==(t.length-1)){System.out.println();}}}
+            if(h1==m2 && h2==m1 ){x++;
+                System.out.println(n);
+            }
+        }System.out.println("Всего совпадений " + x);
 
-            if (t[2]==6 && t[3]==0 && t[1]==9 && t[0]==0)
-            {t[2]=t[3]=t[1]=0; t[0]++;
-                for (int i = 0; i <m ; i++){System.out.print(" " + t[i]);
-                    if (i==(t.length-1)){System.out.println();}}}
-
-            if (t[2]==6 && t[3]==0 && t[1]==0 && t[0]==2 )
-            {t[2]=t[3]=t[0]=0; t[1]++;
-                for (int i = 0; i <m ; i++){System.out.print(" " + t[i]);
-                    if (i==(t.length-1)){System.out.println();}}}
-
-
-
-            if (t[0]==2 && t[1]==3 && t[2]==5 && t[3]==9 )
-            {
-                System.out.println("***Конец программы!***");
-                System.out.println(" всего совпадений комбинации " + x );
-
-                break;}
-
-        }
     }
 }
