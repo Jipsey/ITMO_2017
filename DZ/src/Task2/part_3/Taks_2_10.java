@@ -18,22 +18,16 @@ public class Taks_2_10 {
 
         String n = String.format("%06d\n",i);
 
-                String s1 = n.substring(0,1);
-                int v1= Integer.parseInt(s1);
-                String s2 = n.substring(1,2);
-                int v2= Integer.parseInt(s2);
-                String s3 = n.substring(2,3);
-                int v3= Integer.parseInt(s3);
-                String s4 = n.substring(3,4);
-                int v4= Integer.parseInt(s4);
-                String s5 = n.substring(4,5);
-                int v5= Integer.parseInt(s5);
-                String s6 = n.substring(5,6);
-                int v6= Integer.parseInt(s6);
+                int v1= Integer.parseInt(n.substring(0,1));
+                int v2= Integer.parseInt(n.substring(1,2));
+                int v3= Integer.parseInt(n.substring(2,3));
+                int v4= Integer.parseInt(n.substring(3,4));
+                int v5= Integer.parseInt(n.substring(4,5));
+                int v6= Integer.parseInt(n.substring(5,6));
 
                 int Sum1 = v1+v2+v3;
                 int Sum2= v4+v5+v6;
-                if(Sum1==Sum2){
+                if( Sum1==Sum2){
                     x++;}
 
 
