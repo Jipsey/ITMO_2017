@@ -9,7 +9,7 @@
 package Task2.part_3;
 
 
-public class Taks_2_10_new {
+public class Taks_2_10 {
     public static void main(String[] args) {
         int x=0;
 

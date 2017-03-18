@@ -9,7 +9,7 @@
  */
 package Task2.part_3;
 
-public class Task_2_10 {
+public class Task_2_10_old {
     public static void main(String[] args) {
 
         int n =6; // количество цифр в номере
