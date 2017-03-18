@@ -19,7 +19,7 @@ public class Task_2_10 {
 
         int x =0; // счётчик счастливых билетов
 
-        for (int j = 0; j < 570000; j++) {
+        for (int j = 0; j < 999999; j++) {
             t[m-r]++;
             int sumR= t[3]+t[4]+t[5];
             int sumL= t[0]+t[1]+t[2];

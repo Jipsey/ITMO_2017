@@ -40,7 +40,7 @@ public class Task_2_12 {
                     for (int i = 0; i <m ; i++){System.out.print(" " + t[i]);
                     if (i==(t.length-1)){System.out.println();}}}
 
-            if (t[2]==6 && t[3]==0 && t[1]==9 && t[0]!=2)
+            if (t[2]==6 && t[3]==0 && t[1]==9 && t[0]==0)
             {t[2]=t[3]=t[1]=0; t[0]++;
                 for (int i = 0; i <m ; i++){System.out.print(" " + t[i]);
                     if (i==(t.length-1)){System.out.println();}}}
