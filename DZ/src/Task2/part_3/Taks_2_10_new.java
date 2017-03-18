@@ -13,7 +13,7 @@ public class Taks_2_10_new {
     public static void main(String[] args) {
         int x=0;
 
-        for (int i = 1; i <999999 ; i++) {
+        for (int i = 1; i <1000000 ; i++) {
 
 
         String n = String.format("%06d\n",i);
