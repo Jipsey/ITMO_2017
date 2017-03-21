@@ -15,7 +15,7 @@ public class Task_3_4 {
         int [] arr = new int[8];
         for (int i = 0; i < arr.length; i++) {
 
-        int a = (int)((Math.random()*10) + 1);
+        int a = mine.rand(1,10);
         arr [i]=a;
         }
         System.out.println(Arrays.toString(arr));

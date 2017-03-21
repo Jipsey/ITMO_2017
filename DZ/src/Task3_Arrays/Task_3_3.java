@@ -15,11 +15,11 @@ public class Task_3_3 {
         int x=0;
         for (int i = 0; i <arr.length ; i++)  {
 
-        int a = (int)(Math.random()*9.9);
+        int a = mine.rand(0,9);
         arr[i]= a ;
     }
         for (int n = 0; n <arr.length ; n++)
-         { if (arr[n]%2==0){x++;}}
+         { if (arr[n]%2==0 && arr[n]!=0){x++;}}
         System.out.println(Arrays.toString(arr) );
         System.out.println("чётных чисел в массиве - "+x);
     }

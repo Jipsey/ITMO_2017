@@ -17,9 +17,9 @@ public class Task_3_9 {
         int[] arr2 = new int[10];
         double[] arr3 = new double[10];
         for (int i = 0; i < arr1.length ; i++) {
-            arr1[i]=Task_3_8.rand(1,9); }
+            arr1[i]= mine.rand(1,9); }
         for (int i = 0; i < arr1.length ; i++) {
-            arr2[i]=Task_3_8.rand(1,9); }
+            arr2[i]= mine.rand(1,9); }
         for (int i = 0; i < arr1.length ; i++) {
             arr3[i]= (double)arr1[i]/(double)arr2[i]; }
         System.out.println(Arrays.toString(arr1) +"\n" + Arrays.toString(arr2)+"\n"+Arrays.toString(arr3));

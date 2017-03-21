@@ -13,7 +13,7 @@ public class Task_3_8 {
         int[] arr = new int[12];
 
         for (int i = 0; i <arr.length ; i++) {
-            arr [i] = rand(-15,15);}
+            arr [i] = mine.rand(-15,15);}
 
         int maxNum = arr[0], index = 0;
         for (int i = 0; i < arr.length; i++) {
@@ -24,8 +24,4 @@ public class Task_3_8 {
                 System.out.println("наибольший элемент массива  " + maxNum);
                 System.out.println("номер индекса в массиве  " + index);}
 
-        public static int rand ( int min, int max){
-            max = max - min;
-            return (int) (Math.random() * ++max) + min;
-        }
     }

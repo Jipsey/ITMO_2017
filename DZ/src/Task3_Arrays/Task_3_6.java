@@ -13,7 +13,7 @@ public class Task_3_6 {
 
         for (int i = 0; i < arr.length; i++) {
 
-            arr[i]=(int)((Math.random()*89)+10);
+            arr[i]=mine.rand(10,99);
         }
         System.out.println(Arrays.toString(arr));
         if(arr[0]>arr[1]&& arr[1]>arr[2] && arr[2]>arr[3]) {

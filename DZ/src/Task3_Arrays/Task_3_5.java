@@ -19,20 +19,19 @@ public class Task_3_5 {
         double sum2 = 0;
 
         for (int i = 0; i <arr1.length ; i++){
-            arr1[i]=(int)(Math.random()*5);
+            arr1[i]= mine.rand(0,5);
 
             int num1=x + arr1[i];
             x=num1;
         }
 
         for (int n = 0; n < arr2.length ; n++) {
-            arr2[n]=(int)(Math.random()*5);}
+            arr2[n]= mine.rand(0,5);}
 
         for (int i = 0; i< arr2.length ; i++) {
 
          int num2= y + arr2[i];
            y =num2;}
-
 
         for (int num1:arr1){sum1 = sum1 + num1;}
         double mid1=sum1/arr1.length;
