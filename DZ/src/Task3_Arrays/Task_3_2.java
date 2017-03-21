@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class Task_3_2 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         int[] arr = new int [50];
         int b=1;
         for (int i = 0; i <arr.length ; i++) {

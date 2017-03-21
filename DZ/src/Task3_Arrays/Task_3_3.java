@@ -13,7 +13,7 @@ public class Task_3_3 {
 
         int[] arr = new int[15];
         int x=0;
-        for (int i = 0; i <arr.length ; i++) {
+        for (int i = 0; i <arr.length ; i++)  {
 
         int a = (int)(Math.random()*9.9);
         arr[i]= a ;

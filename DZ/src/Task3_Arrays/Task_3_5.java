@@ -25,7 +25,7 @@ public class Task_3_5 {
             x=num1;
         }
 
-        for (int n = 0; n < arr2.length ; n++){
+        for (int n = 0; n < arr2.length ; n++) {
             arr2[n]=(int)(Math.random()*5);}
 
         for (int i = 0; i< arr2.length ; i++) {
