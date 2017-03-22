@@ -26,9 +26,9 @@ public class Task_3_10 {
             else c++; }
         System.out.println(Arrays.toString(arr) + "  массив после сортировки");
         System.out.printf("%s %s %s\n",a,b,c);
-        if ((a > b) && (a > c)){ System.out.println("Элемент '-1' встречается чаще всего");}
-        if ((b > a) && (b > c)){System.out.println("Элемент '0' встречается чаще всего");}
-        if((c > a) && (c > b)){System.out.println("Элемент '1' встречается чаще всего");}
+        if ((a > b) && (a > c)) System.out.println("Элемент '-1' встречается чаще всего");
+        if ((b > a) && (b > c)) System.out.println("Элемент '0' встречается чаще всего");
+        if((c > a) && (c > b)) System.out.println("Элемент '1' встречается чаще всего");
 
     }
 
