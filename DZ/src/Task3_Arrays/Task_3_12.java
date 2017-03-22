@@ -20,14 +20,13 @@ public class Task_3_12 {
 
         for (int i = 0; i < arr.length ; i++) {
 
-            while(a >= -10 || a <= 10 ){
+            while((a >= -10) && (a <= 10)){
                 if(negN==(arr.length)/2){a=mine.rand(0,10);}
                 if(posN==(arr.length)/2){a=mine.rand(-10,0);}
                 else if(negN !=(arr.length/2) && posN !=(arr.length/2)){a = mine.rand(-10,10);}
             if(a>=-10 && a <= 10 && a!=0 )break;}
             if (a<0) {negN++;}
             else {posN++;}
-            System.out.println(a);
             arr [i] = a;}
 
         System.out.printf("%s\n%s\n",posN+" положительных чисел ",negN + " отрицательных чисел ");
