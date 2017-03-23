@@ -19,20 +19,20 @@ public class Task_3_4 {
             for (int j = 0; j < 7 ; j++) {
                 arr[j][i]=mine.rand(0,9);
                 System.out.print(arr[j][i]+"\t");
-            }   System.out.print("\n");}
+            }
+            System.out.print("\n");}
 
         for (int i = 0; i <6 ; i++) {
             while((arr[0][i] < arr[1][i]) || (arr[1][i] < arr[2][i]) || (arr[2][i] < arr[3][i]) ||
                     arr[3][i] < arr[4][i] || arr[4][i] < arr[5][i]) {
 
                  for (int j = 0; j <arr.length-1 ; j++) {
-                 //if(j == 6){j=1;}
                  if(arr[j][i] < arr[j+1][i]){int q = arr[j][i];arr[j][i] = arr[j+1][i];arr[j+1][i]=q;}
                      }
             }
         }
 
-        System.out.println("************************\n"+" Массив после сортировки ");
+        System.out.println("*************************\n"+" Массив после сортировки ");
         for (int i = 0; i <6 ; i++) {
             for (int j = 0; j <7 ; j++) {
                 System.out.print(arr[j][i]+"\t");}

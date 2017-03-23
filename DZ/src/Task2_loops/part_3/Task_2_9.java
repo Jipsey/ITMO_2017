@@ -14,7 +14,7 @@ public class Task_2_9 {
         int a = num.nextInt();
         String c = Integer.toString(a);
         int b = c.length();
-        int n = 0 ;
+        int n = 0;
         int x = 0;
 
         for (int i = 0; i < b ; i++) {
