@@ -15,9 +15,9 @@ public class MainMethod {
 
         bib.put(kniga1,2);
         bib.put(kniga2,6);
-        bib.print();
+        bib.print( );
         bib.put(kniga3,4);
-        bib.print();
+        bib.print( );
         bib.put(kniga2,6);
     }
 

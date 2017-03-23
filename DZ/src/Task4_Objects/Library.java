@@ -49,7 +49,7 @@ public class Library {
         for (int i = 0; i <books.length; i++) {
             System.out.println(books[i]);
         }
-        System.out.println("*************************************");
+        System.out.println("************************************");
     }
 
     }
