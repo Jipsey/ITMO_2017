@@ -17,12 +17,14 @@ public class Main {
 
         lib.put(kniga1,3);
         lib.put(kniga2,3);
-        lib.put(kniga1,7);
+        lib.put(kniga1,4);
         lib.print();
         System.out.println("***************************");
-        lib.get(kniga1,9);
+        lib.get(kniga1,7);
         lib.print();
 
-        System.out.printf("********************\n%s",lib.numB);
+        System.out.printf("********************\nКниг в библиотеке: %s\n",lib.numB);
+        System.out.println(kniga1.hashCode());
+        System.out.println(kniga1.hashCode());
     }
 }

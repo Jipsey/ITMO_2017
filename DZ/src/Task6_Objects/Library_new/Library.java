@@ -26,17 +26,17 @@ public class Library {
     }
 
     void get(Book book, int quantity){
-
-            int getBook =0; // счётчик вятых книг
         for (int i = 0; i < arrLib.length; ) {
 
-                if (quantity==0){break;}
+                if ( quantity<=0 ){break;}
                 if (arrLib[i].equals(book)){
                     arrLib[i] = null; i++; quantity--; numB--;
-                }
-                else{i++;}
-        }
+                    if (i==arrLib.length){break;}}
 
+                    else {i++;}
+
+
+        }
 
     }
 
