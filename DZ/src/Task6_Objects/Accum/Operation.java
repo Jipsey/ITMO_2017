@@ -1,4 +1,4 @@
-package Task6_Objects;
+package Task6_Objects.Accum;
 
 /**
  *
@@ -6,7 +6,5 @@ package Task6_Objects;
 
 public interface Operation {
     int apply(int a, int b);
-
-
 
 }
