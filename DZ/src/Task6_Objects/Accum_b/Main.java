@@ -10,11 +10,12 @@ public class Main {
 
         double[] arr = new double[4];     // заполняем первый массив arr значением 0
         for(int i=0; i<arr.length; i++){  //
-            arr [i] =0.0;
+            arr [i] =0;
         }
-        Operation[] arrOp = {(a, b) -> a +b, (a,b) ->a-b ,(a,b)->a*b,(a,b)->a/b};
+        Operation[] arrOp = {(a, b) -> a +b, (a,b) ->a-b ,(a,b)->a*b,(a,b)->a/b}; // заполняем второй массив
+                                                                                  // анонимными классами, реализуя
+                                                                                  // интерфейс Operation
 
-        System.out.println(Arrays.toString(arrOp));
         Accumulator acc = new Accumulator(arr,arrOp );
 
         acc.calculate(1.0);

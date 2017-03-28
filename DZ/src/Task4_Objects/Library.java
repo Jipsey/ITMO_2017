@@ -8,7 +8,7 @@ public class Library {
     public int numBook = 0 ; // счётчик количества книг
     public int nowBook = 0; // переменная для переопределения количества книг
     private int maxBook =15; // переменная обозначающая максимальное количество книг
-    Book [] books = new Book[maxBook]; // представляем библиотеку в ввиде массива
+    Book [] books = new Book[maxBook]; // представляем библиотеку в ввиде массива тип Book
 
    public void put (Book book, int qantity){
        if (qantity <= 0){ System.out.println(" Вы вели неверное количество книг ");}

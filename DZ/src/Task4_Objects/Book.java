@@ -9,9 +9,6 @@ public class Book {
     public String  title;
     public int     pagesNum;
 
-    public Book (){
-
-    }
 
     public Book(String author, String title, int pagesNum){
           this.author = author;
