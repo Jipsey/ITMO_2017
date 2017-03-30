@@ -1,5 +1,4 @@
 package Task6_Objects.Accum_b;
-
 /**
  * б) Сделать аккумулятор, у которого в качестве значения массив, и такй же длины массив типа Operation[].
  * Каждой ячейке элемента массива значений соответствует операция из массива операций.
@@ -17,7 +16,7 @@ package Task6_Objects.Accum_b;
  *
  */
 public class Accumulator {
-       double [] value;
+       double [] value; // поле хранящее вычисления
        private Operation[]  operation;
 
       public Accumulator(double[] value, Operation [] operation){

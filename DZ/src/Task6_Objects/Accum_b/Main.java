@@ -12,7 +12,12 @@ public class Main {
         for(int i=0; i<arr.length; i++){  //
             arr [i] =0;
         }
-        Operation[] arrOp = {(a, b) -> a +b, (a,b) ->a-b ,(a,b)->a*b,(a,b)->a/b}; // заполняем второй массив
+        Operation[] arrOp = {new Operation() {
+            @Override
+            public double apply(double a, double b) {
+                return a + b;
+            }
+        }, (a, b) ->a-b ,(a, b)->a*b,(a, b)->a/b}; // заполняем второй массив
                                                                                   // анонимными классами, реализуя
                                                                                   // интерфейс Operation
 

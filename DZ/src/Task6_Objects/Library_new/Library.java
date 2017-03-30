@@ -1,7 +1,5 @@
 package Task6_Objects.Library_new;
 
-import Task4_Objects.*;
-
 /**
  *
  */
@@ -35,11 +33,19 @@ public class Library {
 
                     else {i++;}
 
-
         }
 
     }
 
+    public int search(Book book){ // поиск с использованием hashCode
+        int counter=0;
+        for (int i = 0; i <arrLib.length ; i++) {
+            if ( arrLib[i].hashCode() == (book.hashCode())){
+                counter++;
+            }
+        } return counter;
+
+    }
     public void print() {
         for (int i = 0; i <arrLib.length ; i++) {
 

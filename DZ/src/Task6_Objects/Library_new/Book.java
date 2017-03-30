@@ -3,6 +3,7 @@ package Task6_Objects.Library_new;
 /**
  *
  */
+
 public class Book {
     private String author;
     private String title;
@@ -19,7 +20,6 @@ public class Book {
     @Override
     public String toString() {
         return "book: " + author +'\t' + title + '\t' + numPgs +  "pgs";
-
     }
 
     @Override

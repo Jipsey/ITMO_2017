@@ -20,11 +20,13 @@ public class Main {
         lib.put(kniga1,4);
         lib.print();
         System.out.println("***************************");
-        lib.get(kniga1,7);
+        lib.get(kniga1,0);
         lib.print();
+        lib.search(kniga1);
 
         System.out.printf("********************\nКниг в библиотеке: %s\n",lib.numB);
         System.out.println(kniga1.hashCode());
         System.out.println(kniga1.hashCode());
+        System.out.println("Совпадений в поиске " + lib.search(kniga1));
     }
 }
