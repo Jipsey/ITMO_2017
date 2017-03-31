@@ -1,8 +1,9 @@
-package Task6_Objects.SqarePerimeter;
 
 /**
  *
  */
+
+package Task6_Objects.SqarePerimeter;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 

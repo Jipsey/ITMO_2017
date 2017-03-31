@@ -11,7 +11,6 @@ public class Library {
 
     void put(Book book,int quantity ) {
 
-
         for (int i = 0; i <quantity ; i++) {
             if (numB == arrLib.length){
                 System.out.println("Столько книг в библиотеку не поместится!");

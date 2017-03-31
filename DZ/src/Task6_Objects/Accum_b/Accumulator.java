@@ -17,11 +17,11 @@ package Task6_Objects.Accum_b;
  */
 public class Accumulator {
        double [] value; // поле хранящее вычисления
-       private Operation[]  operation;
+       private Operation[]  operation; // поле хранящее объекты типа Operation
 
       public Accumulator(double[] value, Operation [] operation){
           this.value = value;
-          this.operation = operation ;
+          this.operation = operation;
       }
 
       public void calculate(double b){

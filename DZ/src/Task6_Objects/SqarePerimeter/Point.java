@@ -3,6 +3,7 @@ package Task6_Objects.SqarePerimeter;
 /**
  *
  */
+
 public abstract class Point {
    protected double x1;
    protected double y1;

@@ -26,7 +26,8 @@ public abstract class Figure extends Point {
         // каким способом (.CELLING), для того чтобы наш метод radius мог возвращать полученное значение
         // используем метод перевода в тип double .doubleValue.
         //
-        return (new BigDecimal(Math.sqrt(Math.pow((x1-x2),2) + Math.pow((y1-y2),2))).setScale(3, RoundingMode.CEILING).doubleValue());
+        return (new BigDecimal(Math.sqrt(Math.pow((x1-x2),2) + Math.pow((y1-y2),2)))
+                .setScale(3, RoundingMode.CEILING).doubleValue());
     }
 
     public abstract double edgeL();
