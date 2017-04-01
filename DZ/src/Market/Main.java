@@ -12,7 +12,7 @@ public class Main {
        Stock stock = new Stock() ;
       // stock.setStockValue();
 
-        for (int i=0;i<9;i++) {
+         for (int i=0;i<9;i++) {
             stock.put(stock.pen, 5);
         }
 

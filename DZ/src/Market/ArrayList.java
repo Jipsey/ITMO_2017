@@ -6,7 +6,7 @@ package Market;
 public class ArrayList {
 
     int volume =10;// вместимость склада
-    int num = volume;// счётких пустых ячеек в аррайлисте
+     int num = volume;// счётких пустых ячеек в аррайлисте
     Product [] stock = new Product[volume];
 
 

@@ -32,7 +32,7 @@ public class Stock {
 
         while (arrList.stock[i]!=null && arrList.num != 1 ){i++;}
 
-        if (arrList.num>1){
+        if (arrList.num>1) {
         product.quantity = quantity;
             arrList.stock[i] = product;
             i++;arrList.num--;

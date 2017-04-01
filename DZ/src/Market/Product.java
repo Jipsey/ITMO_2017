@@ -6,7 +6,7 @@ package Market;
 public  class Product {
     private int id =0;
     private String name;
-    private double price;
+    private double  price;
     int quantity;
 
 
