@@ -10,7 +10,7 @@ public  class Product {
     int quantity;
 
 
-   public Product(int quantity){
+   public Product(int quantity ){
        this.quantity=quantity;
    }
    public Product(String name, int id, double price){
@@ -25,6 +25,6 @@ public  class Product {
 
     @Override
     public String toString() {
-        return "product: " + id +'\t' + name + '\t' + price +  "$" + quantity + "pcs";
+        return "product: " + id +'\t' + name + '\t' + price +  "$\t" + quantity + " pcs";
     }
 }

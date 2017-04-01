@@ -13,7 +13,7 @@ public class Transaction {
 
 
     public void put(){
-        for (int i=0;i < dealList.length;i++){
+        for (int i=0;i < dealList.length;i++) {
 
     }
     }
