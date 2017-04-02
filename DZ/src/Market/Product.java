@@ -23,8 +23,9 @@ public  class Product {
      public int getQuantity(Product product){
          int counter=0;
          for (int i = 0; i <(new ArrayList()).stock.length ; i++) {
-             ArrayList arrL = new ArrayList();
-           if ( (product.name).equals( arrL.stock[i].name )){counter++;}
+             //ArrayList arrL = new ArrayList();
+             Stock stock = new Stock();
+             if ( (product).equals( stock.arrList.stock[i] )){counter++;}
          }
          return counter;
      }

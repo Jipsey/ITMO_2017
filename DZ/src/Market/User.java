@@ -11,24 +11,28 @@ public class User {
     int id = name.hashCode();
     double userBalance = 650;
 
-
+        // метод для логина пользователя
             public void login() {
-
-                    checkNameEnter();
+                    //checkNameEnter();
+                    if (checkNameEnter().equals(this.name)){
+                        System.out.println("у вас на счете: " + getUserBalance() + "$");
+                    }
+                        else{
                     while (!checkNameEnter().equals(this.name)) {
                            checkNameEnter();
-                        if(!checkNameEnter().equals(this.name)){
-                            System.out.println("ввведёный пользователь в системе не зарегестрирован");}
-                    }
-                System.out.println("у вас на счете: " + getUserBalance() + "$");}
+                           }}
+                     }
 
+        // метод проверки введенного имени пользователя
 
     public String checkNameEnter() {
         System.out.print("Введите имя пользователя: ");
         Scanner scanner = new Scanner(System.in);
         String scan = scanner.nextLine();
+        if (!scan.equals(this.name)){System.out.println("введёный пользователь в системе не зарегестрирован");}
         return scan;
     }
+
 
     public double getUserBalance() {
 

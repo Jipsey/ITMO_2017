@@ -38,7 +38,6 @@ public class ArrayList {
         // метод динамического увеличения массива на треть
         public void makeBigger() {
         this.volume = volume +volume/3;
-
         Product[] tempArr = new Product[volume];
         System.arraycopy(stock, 0, tempArr, 0, stock.length);
         this.stock = new Product[volume];
