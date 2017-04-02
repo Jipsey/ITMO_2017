@@ -12,11 +12,8 @@ public class Transaction {
     Object [] dealList = new Object[sum+1]; //в этом массиве храним список сделок
 
 
-    public void put(){
-        for (int i=0;i < dealList.length;i++) {
 
-    }
-    }
+
 
 
 

@@ -2,7 +2,6 @@
  *
  */
 package Market;
-import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -21,35 +20,5 @@ public class Stock {
     Product chair = new Product("chair",id=3451,76.5);
 
 
-    public void setStockValue() {
-        System.out.print("Введите количество продуктов на складе:");
-        Scanner sc = new Scanner(System.in);
-        arrList.volume = sc.nextInt();
-        }
-
-        int i =0;
-    public void put(Product product, int quantity){
-
-        while (arrList.stock[i]!=null && arrList.num != 1 ){i++;}
-
-        if (arrList.num>1) {
-        product.quantity = quantity;
-            arrList.stock[i] = product;
-            i++;arrList.num--;
-        if (arrList.num <= 1){arrList.makeBigger();
-            System.out.println("Объём нового аррайЛиста: " + arrList.volume);
-           arrList.num = arrList.volume; i=0;
-        }
-        }}
-
-
-
-
-
-    public void print(){
-        for (int i = 0; i < arrList.stock.length ; i++) {
-
-        System.out.println(arrList.stock[i]);
-    }}
 
 }
