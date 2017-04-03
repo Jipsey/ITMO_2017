@@ -2,13 +2,13 @@
  *
  */
 package Market;
-import java.util.Scanner;
+import com.sun.deploy.util.ArrayUtil;
+
+import java.util.Arrays;
 
 
 public class Stock {
     int id;// id продукта
-    int volume ;// вместимость склада
-    ArrayList arrList = new ArrayList();
 
 
     Product pen = new Product("pencil",id=1001,5.85);
@@ -19,6 +19,39 @@ public class Stock {
     Product table = new Product("table",id=8981,435);
     Product chair = new Product("chair",id=3451,76.5);
 
+    public static void stockBalance (Product[] arr ) {
+        Product head = null, current=null, next=null;
+        int n=0;
+        Product[] arrStockList = new Product[arr.length];
+        for (int i = 0; i < arr.length;i++ ) {
+            if ( arr[i] == null) {     }
+            if ( arrStockList[n] != null && arrStockList[n].equals(arr[i])){head = arrStockList[n] ; n++;}
+            if (arrStockList[n] == null)
+                if (arr[i] != null && head != arr[i]) {
+                    arrStockList[n] = arr[i]; arrStockList[n].quantity =
+                            Product.getQuantityProduct(arr,arrStockList[n].name);
+                }
+        }
+        arrStockList = optStockList(arrStockList);
+
+        for (int i = 0; i < arrStockList.length; i++) {
+
+     System.out.println("№" + (i+1) + "\t" + arrStockList[i].getName() + "\t" + arrStockList[i].quantity + "\t" +"шт\t"
+       +arrStockList[i].getPrice() + "$"
+     ); }
+        }
+
+    // метод для удаления пустых индексов из массива типа Product
+    private static Product[] optStockList(Product[] product){
+        int counter =0;
+        for (int i = 0; i <product.length ; i++) {
+            if(product[i]==null){counter++;}
+        } Product [] tempArr = new Product[product.length-counter];
+        System.arraycopy(product,0,tempArr,0,tempArr.length);
+        product = new Product[tempArr.length];
+         System.arraycopy(tempArr,0,product,0,tempArr.length);
+       return product;
+    }
 
 
 }

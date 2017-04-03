@@ -21,11 +21,12 @@ public class User {
                     while (!checkNameEnter().equals(this.name)) {
                            checkNameEnter();
                            }}
+                    getUserBalance();
                      }
 
         // метод проверки введенного имени пользователя
 
-    public String checkNameEnter() {
+    private String checkNameEnter() {
         System.out.print("Введите имя пользователя: ");
         Scanner scanner = new Scanner(System.in);
         String scan = scanner.nextLine();
@@ -39,7 +40,7 @@ public class User {
                 return userBalance;
     }
 
-    public int getId() {
+    private int getId() {
         return id;
     }
 }

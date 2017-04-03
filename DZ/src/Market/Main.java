@@ -5,6 +5,8 @@ package Market;
 
 import java.util.Scanner;
 
+//import static Market.Product.getQuantity;
+
 public class Main {
 
 
@@ -17,18 +19,20 @@ public class Main {
        Stock stock = new Stock() ;
 
         ArrayList arrL = new ArrayList();
-        arrL.add(stock.coin, 6);
-        arrL.add(stock.comics,7);
-        arrL.add(stock.chair,6);
+        arrL.add(stock.coin, 2);
+        arrL.add(stock.comics,2);
+        arrL.add(stock.chair,3);
 
 
-        arrL.print(arrL.stock);
 
-        System.out.println();
-        System.out.println("свободных мест на складе:  " + arrL.num);
-        System.out.println("вместимость склада:  " + arrL.volume);
-        System.out.println("на складе " + stock.coin.name + " " + stock.coin.getQuantity(stock.coin) +" штук" );
+     //        arrL.print(arrL.stock);
+
+
+        System.out.println("список товров на складе:");
+        Stock.stockBalance(arrL.stock);
+
     }
+
 
 
 }
