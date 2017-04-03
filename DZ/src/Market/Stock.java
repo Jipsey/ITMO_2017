@@ -10,16 +10,17 @@ import java.util.Arrays;
 public class Stock {
     int id;// id продукта
 
+    Product pen = new Product("pencil", id = 1001, 5.85);
+    Product marker = new Product("marker", id = 1021, 4.35);
+    Product comics = new Product("comics", id = 2134, 9.95);
+    Product coin = new Product("coin", id = 1245, 34.25);
+    Product notebook = new Product("notebook", id = 7826, 1200);
+    Product table = new Product("table", id = 8981, 435);
+    Product chair = new Product("chair", id = 3451, 76.5);
 
-    Product pen = new Product("pencil",id=1001,5.85);
-    Product marker = new Product("marker",id=1021,4.35);
-    Product comics = new Product("comics",id=2134,9.95);
-    Product coin = new Product("coin",id=1245,34.25);
-    Product notebook = new Product("notebook",id=7826,1200);
-    Product table = new Product("table",id=8981,435);
-    Product chair = new Product("chair",id=3451,76.5);
 
-    public static void stockBalance (Product[] arr ) {
+        // метод оптимизации склада - массиа, с подсчетом количества позиций
+        public static Product[] stockBalance (Product[] arr ) {
         Product head = null, current=null, next=null;
         int n=0;
         Product[] arrStockList = new Product[arr.length];
@@ -32,14 +33,8 @@ public class Stock {
                             Product.getQuantityProduct(arr,arrStockList[n].name);
                 }
         }
-        arrStockList = optStockList(arrStockList);
+        return arrStockList = optStockList(arrStockList);}
 
-        for (int i = 0; i < arrStockList.length; i++) {
-
-     System.out.println("№" + (i+1) + "\t" + arrStockList[i].getName() + "\t" + arrStockList[i].quantity + "\t" +"шт\t"
-       +arrStockList[i].getPrice() + "$"
-     ); }
-        }
 
     // метод для удаления пустых индексов из массива типа Product
     private static Product[] optStockList(Product[] product){
@@ -52,6 +47,4 @@ public class Stock {
          System.arraycopy(tempArr,0,product,0,tempArr.length);
        return product;
     }
-
-
 }

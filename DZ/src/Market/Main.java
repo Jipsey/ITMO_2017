@@ -9,27 +9,22 @@ import java.util.Scanner;
 
 public class Main {
 
-
     public static void main(String[] args) {
-        User user = new User();
-        user.login();
-        //transaction.invoce();
-
-
-       Stock stock = new Stock() ;
 
         ArrayList arrL = new ArrayList();
+        Stock stock = new Stock() ;
+
         arrL.add(stock.coin, 2);
         arrL.add(stock.comics,2);
-        arrL.add(stock.chair,3);
+        arrL.add(stock.chair,16);
 
+        User.login(arrL.stock);
 
-
-     //        arrL.print(arrL.stock);
-
-
-        System.out.println("список товров на складе:");
         Stock.stockBalance(arrL.stock);
+
+        Transaction.deal(Stock.stockBalance(arrL.stock));
+
+
 
     }
 

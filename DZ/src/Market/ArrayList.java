@@ -9,7 +9,10 @@ public class ArrayList {
     public int num = volume;// счётких пустых ячеек в аррайлисте
     Product [] stock = new Product[volume];// массив - склад
 
-         // метод добавления продуктов в свободные места массива
+    public ArrayList() {
+    }
+
+    // метод добавления продуктов в свободные места массива
     public void add(Product object, int quantity){
           new Product(quantity); // записываем интовое значение в поле quantity объекта Product
           if(quantity >= stock.length){

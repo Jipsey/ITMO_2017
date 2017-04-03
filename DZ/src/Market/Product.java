@@ -11,6 +11,7 @@ public  class Product {
     public int quantity;
 
 
+
     public Product(String name, int quantity) {
         name = name;
         quantity = quantity;
@@ -52,11 +53,9 @@ public  class Product {
     }
 
 
-    public double getPriceDeal(int quantity) {
-        return price * quantity;
+    public static double getPriceDeal(double price,int quantity) {
+        return   quantity * price;
     }
-
-
 
 
     @Override

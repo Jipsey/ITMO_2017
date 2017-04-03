@@ -1,46 +1,57 @@
 package Market;
 
-import java.util.Scanner;
 
 /**
  *
  */
+import java.util.Scanner;
 
 public class User {
-    String name = "Aleksandr";
+    public static String name = "Aleksandr";
     int id = name.hashCode();
-    double userBalance = 650;
+    private static double userBalance = 650;
 
         // метод для логина пользователя
-            public void login() {
-                    //checkNameEnter();
-                    if (checkNameEnter().equals(this.name)){
+            public static void login(Product[] object) {
+
+                    if (checkNameEnter().equals(name)){
                         System.out.println("у вас на счете: " + getUserBalance() + "$");
                     }
                         else{
-                    while (!checkNameEnter().equals(this.name)) {
+                    while (!checkNameEnter().equals(name)) {
                            checkNameEnter();
                            }}
                     getUserBalance();
+
+                    System.out.println("список товров на складе:");
+                    object = Stock.stockBalance(object);
+
+                    printStockList(object);
                      }
 
         // метод проверки введенного имени пользователя
-
-    private String checkNameEnter() {
+    private static String checkNameEnter() {
         System.out.print("Введите имя пользователя: ");
         Scanner scanner = new Scanner(System.in);
         String scan = scanner.nextLine();
-        if (!scan.equals(this.name)){System.out.println("введёный пользователь в системе не зарегестрирован");}
+        if (!scan.equals(name)){System.out.println("введёный пользователь в системе не зарегестрирован");}
         return scan;
     }
+      // метод для вывода на печать массива - склада в нужном нам виде
+private static void  printStockList(Object[] object){
+        System.out.println("************************");
+        for (int i = 0; i < object.length; i++) {
+
+            Product[] product = (Product[]) object; // приводим Object[] к типу Product[] !
+            System.out.println("№" + (i+1) + "\t" + product[i].getName() + "\t" + product[i].quantity +" шт\t"
+                    + product[i].getPrice() + "$"
+            );} System.out.println("************************");
+    }
 
 
-    public double getUserBalance() {
-
+    public static double getUserBalance() {
                 return userBalance;
     }
-
-    private int getId() {
-        return id;
-    }
 }
+
+
