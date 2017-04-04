@@ -11,6 +11,9 @@ public class User {
     int id = name.hashCode();
     private static double userBalance = 650;
 
+    ArrayList ArrListUsers = new ArrayList();
+
+
         // метод для логина пользователя
             public static void login(Product[] object) {
 

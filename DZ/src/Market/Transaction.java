@@ -89,6 +89,8 @@ public class Transaction {
 
     private static double makeTransaction(String string,int q,double sum,Product[] product) {
          String inputStr =inputAccept() ;
+
+
         while (!accept(inputStr)){
             System.out.println("Введите либо положительный ответ, либо отрицательный ");
             inputStr =inputAccept();}
@@ -99,7 +101,7 @@ public class Transaction {
         return balance = balance + sum ; }
 
     // метод ввода с консоли подтверждения совершения транзакции
-    private static String inputAccept(){
+     private static String inputAccept(){
         System.out.print("Подтвердите транзакцию:");
         Scanner scanner = new Scanner(System.in);
         String  inputAccetr =  scanner.nextLine();
@@ -108,10 +110,10 @@ public class Transaction {
 
      private static  boolean accept(String s){
 
+
         while (!s.equals("yes") && !s.equals("y") && !s.equals("Yes") && !s.equals("YES") && !s.equals("Y")){
             return false;}
         return true;
     }
-
     }
 

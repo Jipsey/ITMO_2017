@@ -5,12 +5,14 @@ package Market;
  */
 public class ArrayList {
 
-    public int volume =10;// вместимость склада
-    public int num = volume;// счётких пустых ячеек в аррайлисте
-    Product [] stock = new Product[volume];// массив - склад
+    private int volume =10;// вместимость склада
+    private int num = volume;// счётких пустых ячеек в аррайлисте
+    Product [] stock ;// массив - склад
 
     public ArrayList() {
+             stock= new Product[volume];
     }
+
 
     // метод добавления продуктов в свободные места массива
     public void add(Product object, int quantity){

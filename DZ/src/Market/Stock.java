@@ -21,7 +21,7 @@ public class Stock {
 
         // метод оптимизации склада - массиа, с подсчетом количества позиций
         public static Product[] stockBalance (Product[] arr ) {
-        Product head = null, current=null, next=null;
+        Product head = null;
         int n=0;
         Product[] arrStockList = new Product[arr.length];
         for (int i = 0; i < arr.length;i++ ) {
