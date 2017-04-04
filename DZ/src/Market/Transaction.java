@@ -1,15 +1,12 @@
 /**
  *
  */
-
 package Market;
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Scanner;
 public class Transaction {
 
     int sum; //счётчик количетва сделок
-    double balance; // баланс магазина
+    static private double balance = 1600; // баланс магазина
     Object date;
     int  total;// тут храним сумму сделки
     Object [] dealList = new Object[sum+1]; //в этом массиве храним список сделок
@@ -27,20 +24,15 @@ public class Transaction {
             {  int inputQuantity =  inputQuantity();
 
                while (!checkInputQantity(input,inputQuantity,product))
-                //&&
-                 //       (Product.getPriceDeal(product[2].getPrice(),inputQuantity))> User.getUserBalance()
-                   //     )
-                 //{
-                    //if (Product.getPriceDeal(product[3].getPrice(),inputQuantity)> User.getUserBalance()){
-                    //System.out.println("У вас не достаточно денег, пизмените количесво ");
-               {inputQuantity =  inputQuantity();
-                }   //else
-                    System.out.println("Столько "+ input +" нет на складе");
-                    inputQuantity =  inputQuantity();
-                //}
-             //{
+
+               {     System.out.println("Столько "+ input +" нет на складе");
+               inputQuantity =  inputQuantity();
+                }
              {
                  basket(input,inputQuantity,product);}
+                System.out.println("На балансе магазина "+ balance + " $");
+
+                Stock.stockBalance(product);
              }
          }
          //}
@@ -77,18 +69,49 @@ public class Transaction {
     }
 
     // метод формирующий корзину покупателя
-    public static void basket(String string, int q,Product[] product ){
+    private static void basket(String string, int q,Product[] product ){
         double price=0.0;
         for (int i = 0; i <product.length ; i++) {
             if (string.equals(product[i].name)) { price = product[i].getPrice();}
         }
-           double sum = Product.getPriceDeal(price,q);
-           while (sum > (User.getUserBalance())){
+             double sum;
+           while ((sum = Product.getPriceDeal(price,q)) > (User.getUserBalance())){
                System.out.println("У вас недостаочно денег на счёте!");
-               checkInputQantity(string,inputQuantity(),product);}
+               checkInputQantity(string,q=inputQuantity(),product);}
         System.out.println("Ваша корзина сформирована:");
-        System.out.printf("%s %s шт %s$ ",string,q,sum);
+        System.out.printf("%s %s шт %s$\n",string,q,sum);
+
+        makeTransaction(string,q,sum,product);// подтверждение транзакции с изменением баланса склада
+
+        User.printStockList(product);
+        
     }
 
-    public double getTotal() { return total; }
-}
+    private static double makeTransaction(String string,int q,double sum,Product[] product) {
+         String inputStr =inputAccept() ;
+        while (!accept(inputStr)){
+            System.out.println("Введите либо положительный ответ, либо отрицательный ");
+            inputStr =inputAccept();}
+
+        for (int i = 0; i <product.length ; i++) {
+            if ((product[i].name).equals(string)){ product[i].quantity = product[i].quantity - q ; }
+        }
+        return balance = balance + sum ; }
+
+    // метод ввода с консоли подтверждения совершения транзакции
+    private static String inputAccept(){
+        System.out.print("Подтвердите транзакцию:");
+        Scanner scanner = new Scanner(System.in);
+        String  inputAccetr =  scanner.nextLine();
+        return inputAccetr;
+    }
+
+     private static  boolean accept(String s){
+
+        while (!s.equals("yes") && !s.equals("y") && !s.equals("Yes") && !s.equals("YES") && !s.equals("Y")){
+            return false;}
+        return true;
+    }
+
+    }
+

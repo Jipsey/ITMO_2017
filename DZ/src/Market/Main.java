@@ -3,9 +3,6 @@
  */
 package Market;
 
-import java.util.Scanner;
-
-//import static Market.Product.getQuantity;
 
 public class Main {
 
@@ -17,13 +14,14 @@ public class Main {
         arrL.add(stock.coin, 2);
         arrL.add(stock.comics,2);
         arrL.add(stock.chair,16);
+        arrL.add(stock.notebook,8);
+        arrL.add(stock.pen,35);
 
         User.login(arrL.stock);
 
         Stock.stockBalance(arrL.stock);
 
         Transaction.deal(Stock.stockBalance(arrL.stock));
-
 
 
     }

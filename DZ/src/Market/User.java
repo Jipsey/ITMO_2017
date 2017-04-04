@@ -38,7 +38,7 @@ public class User {
         return scan;
     }
       // метод для вывода на печать массива - склада в нужном нам виде
-private static void  printStockList(Object[] object){
+   public static void  printStockList(Object[] object){
         System.out.println("************************");
         for (int i = 0; i < object.length; i++) {
 

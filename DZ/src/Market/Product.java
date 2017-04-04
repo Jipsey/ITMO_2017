@@ -11,15 +11,6 @@ public  class Product {
     public int quantity;
 
 
-
-    public Product(String name, int quantity) {
-        name = name;
-        quantity = quantity;
-
-    }
-
-
-
     public Product(int quantity) {
         this.quantity = quantity;
     }
