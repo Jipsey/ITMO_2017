@@ -27,6 +27,7 @@ public class Accumulator {
       public void calculate(double b){
           for (int i = 0; i < value.length ; i++) {
               if (i>1 && value[i] ==0){value[i]=1;}
+
               value[i] = operation[i].apply(value[i], b);
           }
       }

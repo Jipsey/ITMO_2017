@@ -33,7 +33,7 @@ public class Stock {
                             Product.getQuantityProduct(arr,arrStockList[n].name);
                 }
         }
-        return arrStockList = optStockList(arrStockList);}
+        return optStockList(arrStockList);}
 
 
     // метод для удаления пустых индексов из массива типа Product

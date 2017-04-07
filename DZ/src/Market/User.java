@@ -9,13 +9,15 @@ import java.util.Scanner;
 public class User {
     public static String name = "Aleksandr";
     int id = name.hashCode();
-    private static double userBalance = 650;
+    public static double userBalance = 650;
+    private static int usersQantity = 5;
 
-    ArrayList ArrListUsers = new ArrayList();
+
 
 
         // метод для логина пользователя
             public static void login(Product[] object) {
+
 
                     if (checkNameEnter().equals(name)){
                         System.out.println("у вас на счете: " + getUserBalance() + "$");
@@ -23,7 +25,7 @@ public class User {
                         else{
                     while (!checkNameEnter().equals(name)) {
                            checkNameEnter();
-                           }}
+                           } System.out.println("у вас на счете: " + getUserBalance() + "$");}
                     getUserBalance();
 
                     System.out.println("список товров на складе:");

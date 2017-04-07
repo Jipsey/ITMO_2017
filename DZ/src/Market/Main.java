@@ -11,11 +11,12 @@ public class Main {
         ArrayList arrL = new ArrayList();
         Stock stock = new Stock() ;
 
-        arrL.add(stock.coin, 2);
-        arrL.add(stock.comics,2);
+        arrL.add(stock.coin, 45);
+        arrL.add(stock.comics,20);
         arrL.add(stock.chair,16);
-        arrL.add(stock.notebook,8);
+        arrL.add(stock.notebook,18);
         arrL.add(stock.pen,35);
+
 
         User.login(arrL.stock);
 
