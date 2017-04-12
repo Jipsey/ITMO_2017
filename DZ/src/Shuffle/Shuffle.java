@@ -6,8 +6,10 @@ import java.util.ArrayList;
  */
 public class Shuffle {
     public static void main(String[] args) {
+
+        int x=20;// количество числе в списке
         ArrayList<Integer> intAL = new ArrayList<>();
-          for(int i = 0; i<20;i++ ){
+          for(int i = 0; i < x;i++ ){
         intAL.add(i);
     }
 
