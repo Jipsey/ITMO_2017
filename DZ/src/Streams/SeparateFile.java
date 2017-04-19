@@ -15,7 +15,7 @@ public class SeparateFile {
 
     }
     //метод резделяющий файл на части
-    public static int separator (File file,String pathOutput ,int size) throws IOException {
+    public static void separator (File file,String pathOutput ,int size) throws IOException {
        try(InputStream fileInputStream = new FileInputStream(file)){
 
            byte[] buffer = new byte[size]; // создаём массив равный размеру, заданному в параметрах метода
@@ -28,7 +28,7 @@ public class SeparateFile {
                try(OutputStream fileOutputStream = new FileOutputStream(pathOutput + i)){ //
                    fileOutputStream.write(buffer,0,length);
                } i ++;
-           } return i;
+           }
 
 
        }
