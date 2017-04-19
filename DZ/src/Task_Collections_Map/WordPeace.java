@@ -13,7 +13,7 @@ public class WordPeace {
 
         List<String> s = readWords(new File("C:\\Education_ITMO\\ITMO_2017\\Storage\\wp.txt"));
 
-       top(s,10);
+        top(s,10);
 
 
     }
@@ -63,7 +63,6 @@ public class WordPeace {
              }
          });
 
-         ;
 
          System.out.println("---------- Топ 10 слов из книги -----------");
 

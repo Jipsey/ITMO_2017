@@ -4,7 +4,7 @@ package Task6_Objects.List_new;
  *
  */
 
-public class MyLinkedList implements List{
+public class MyLinkedList   implements List {
 
     Item head;// первое значение списка заносим в поле типа Item
     Item previus;
@@ -27,7 +27,7 @@ public class MyLinkedList implements List{
 
 
     @Override
-    public Object get(int i) {
+    public Object get(int i) throws Exception {
         if (head == null){return null;}
 
         if (i==0){return head.val;}
@@ -37,12 +37,15 @@ public class MyLinkedList implements List{
         for (Item prev = head;;){
              Item next = prev.next;
 
-             if(next.next == null){return null;}
+             if(next.next == null){
+                  throw new Exception("  Запрашиваемого объекта нет в листе !  ");
+             }
 
              if(counter == i){ return next.val; }
              counter++;
 
              prev = next;
+
         }
 
     }
@@ -71,21 +74,28 @@ public class MyLinkedList implements List{
              prev = next;
 
          }
+
     }
 
+    @Override
+    public int size(){
 
+        int size =0;
+        if(head == null){return size;}
+        if(head != null){
 
-    public Object remove (Object object){
-        if (head == null){ return null;}
-       if (head.next == null){ return head;}
+         for(Item prev = head;;){
+             Item next = prev.next;
 
-        int counter =1;
+             if(next.next==null){return size;}
 
-       // for ( ){ ;}
+             size++;
 
-        return object;
+             prev =next;
+         }
+        }
+          return size;
     }
-
 
 
     public class Item{

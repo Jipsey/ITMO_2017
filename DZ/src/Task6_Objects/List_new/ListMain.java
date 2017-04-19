@@ -10,7 +10,7 @@ import java.util.Objects;
  */
 public class ListMain {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         List list = new MyLinkedList();
 
@@ -22,7 +22,7 @@ public class ListMain {
 
         for (int i=0; i<10;i++) {
 
-            System.out.println(list.get(i));
+          System.out.println(list.get(i));
 
         }
 
