@@ -1,5 +1,5 @@
-package Patterns;
-import static Patterns.Factory.Reg.*;
+package Patterns.Singleton;
+import static Patterns.Singleton.Factory.Reg.*;
 
 /**
  *
