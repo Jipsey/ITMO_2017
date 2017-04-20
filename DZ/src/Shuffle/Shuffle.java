@@ -1,11 +1,11 @@
 package Shuffle;
 import java.util.ArrayList;
-
 /**
  *
  */
 public class Shuffle {
     public static void main(String[] args) {
+
 
         int x=20;// количество числе в списке
         ArrayList<Integer> intAL = new ArrayList<>();
@@ -16,6 +16,7 @@ public class Shuffle {
         System.out.println("----- исходный ArrayList -----");
         for(int i=0; i<intAL.size();i++) { System.out.println(intAL.get(i));}
         shuffle(intAL);
+
     }
 
     public static void shuffle(ArrayList <Integer> arrL){
@@ -37,5 +38,7 @@ public class Shuffle {
         int x = arrL.get(0);
         arrL.set(0,arrL.get(randomIndex));
         arrL.set(randomIndex,x);
+}
 
-}}
+}
+
