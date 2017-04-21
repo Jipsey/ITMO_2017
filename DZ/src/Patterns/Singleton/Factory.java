@@ -1,5 +1,4 @@
 package Patterns.Singleton;
-
 import static Patterns.Singleton.Factory.Reg.*;
 /**
  *
@@ -9,6 +8,7 @@ public abstract class Factory implements Car {
     enum Reg{RU,JP,GE}
 
     private static final Factory VAZ = new Factory() {
+
         @Override
         public boolean drive(int speed) {
             if (speed<175) return true;
