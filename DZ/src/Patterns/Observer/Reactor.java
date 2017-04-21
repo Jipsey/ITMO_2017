@@ -25,7 +25,7 @@ public class Reactor {
 
 
     private void  notifyControllers(int temp){
-            for (TempController tListener:answers  )
-                tListener.answer(temp);
+            for (TempController tControllers:answers  )
+                tControllers.answer(temp);
             }
         }
