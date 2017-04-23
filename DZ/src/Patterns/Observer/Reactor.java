@@ -18,7 +18,7 @@ public class Reactor {
     }
 
     public void setTemp(int temp){
-        System.out.println("Current temperature of the Reactor: " + temp);
+        System.out.println("Current temperature of the Reactor: " + temp +" C");
 
         notifyControllers(temp);
     }

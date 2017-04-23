@@ -38,9 +38,11 @@ public abstract class Factory implements Car {
 
    public static Factory getFactory(Reg region){
        if (region.equals(RU)) return VAZ;
-       if (region.equals(JP)) return TOYOTA;
-       if (region.equals(GE)) return BavariaMotors;
+       if (region.equals(JP)) {return TOYOTA;}
+       else if (region.equals(GE)) return BavariaMotors;
        return null;
     }
+
+
 }
 

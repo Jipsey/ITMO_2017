@@ -33,6 +33,6 @@ public class Main {
             }
         });
 
-        reactor.setTemp(6000);
+        reactor.setTemp(60);
     }
 }
