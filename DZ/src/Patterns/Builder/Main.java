@@ -4,12 +4,12 @@ public class Main {
 
     public static void main(String[] args) {
        Director director = new Director();
-       PizzaBuilder margarita = new Top5.PizzaMargaritta();
+       PizzaBuilder newPizza = new Top5.PizzaFourCheeses();
 
-         director.setPizzaBuilder(margarita);
+         director.setPizzaBuilder(newPizza);
          director.make();
 
-        System.out.println(margarita);
+        System.out.println(newPizza);
     }
 
 }
