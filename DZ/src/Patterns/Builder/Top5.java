@@ -14,9 +14,10 @@ public static class PizzaMargaritta extends PizzaBuilder{
     public void buildToppings() {
         Collection<Pizza.Toppings> toppings = new HashSet<>();
                 toppings.add(Pizza.Toppings.SALAMI);
-                toppings.add(Pizza.Toppings.CHEESE_CAMAMDER);
+                toppings.add(Pizza.Toppings.CHEESE_CAMAMBER);
 
                 pizza.setToppings(toppings);
+                pizza.setPizzaName("Margarita");
                 }
 
     @Override
@@ -34,6 +35,7 @@ public static class PizzaNapoli extends PizzaBuilder{
         toppings.add(Pizza.Toppings.CHEESE_GAUDA);
 
         pizza.setToppings(toppings);
+        pizza.setPizzaName("Napoli");
     }
 
     @Override
@@ -49,12 +51,12 @@ public static class PizzaFourCheeses extends PizzaBuilder{
     public void buildToppings() {
         Collection<Pizza.Toppings> toppings = new HashSet<>();
         toppings.add(Pizza.Toppings.CHEESE_GAUDA);
-        toppings.add(Pizza.Toppings.CHEESE_CAMAMDER);
+        toppings.add(Pizza.Toppings.CHEESE_CAMAMBER);
         toppings.add(Pizza.Toppings.CHEESE_MOZZARELLA);
         toppings.add(Pizza.Toppings.CHEESE_RUSSIAN);
 
         pizza.setToppings(toppings);
-
+        pizza.setPizzaName("FourCheeses");
     }
 
     @Override
@@ -76,7 +78,7 @@ public static class PizzaFourSeasons extends PizzaBuilder {
         toppings.add(Pizza.Toppings.CHEESE_MOZZARELLA);
 
         pizza.setToppings(toppings);
-
+        pizza.setPizzaName("FourSeasons");
     }
 
     @Override
@@ -98,7 +100,7 @@ public static class PizzaHawaii extends PizzaBuilder{
         toppings.add(Pizza.Toppings.BACON);
 
         pizza.setToppings(toppings);
-
+        pizza.setPizzaName("Hawaii");
     }
 
     @Override
