@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         System.out.println(toString(new B()));
 
     }
@@ -20,7 +20,7 @@ public class Main {
     public @interface Exclude{
 
     }
-    public static String toString(Object o) throws Exception {
+    public static String toString(Object o) {
         Class<?> c = o.getClass();
 
         String simpleName ="Name of the class: "+ c.getSimpleName();
@@ -34,16 +34,20 @@ public class Main {
         Field[] fields = c.getDeclaredFields();
 
         for (Field field : fields) {
-             // делаем проверку налиция антации, если ее нет, то записываем имя поля его значени и тип
+             // делаем проверку наличия аннотации, если ее нет, то записываем имя поля его значени и тип
              // в стринговую переменную forPrint, после чего выводим её на консоль
             if ( !field.isAnnotationPresent(Exclude.class)) {
+                try {
             String name = field.getName();
             field.setAccessible(true);
             Object val = field.get(o);
             String forPrint = "Name of the variable: " + name + ", the value: " + val +
                     ", type: " + field.getType().getSimpleName();
 
-            System.out.println( forPrint );}
+            System.out.println( forPrint );} catch (Exception e){
+                    System.err.println("Exception catched " +e.getMessage());
+                }
+            }
         }
         return simpleName;
     }
@@ -57,7 +61,7 @@ public class Main {
 
     static class B extends A {
 
-        @Exclude // помечаем аннотацие поле которое не будем выводить в общем списке, через toString
+        @Exclude // помечаем аннотацией поле которое не будем выводить в общем списке, через toString
         int i = 12;
 
         double d = 23;
