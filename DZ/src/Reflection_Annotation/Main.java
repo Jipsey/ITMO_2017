@@ -34,8 +34,9 @@ public class Main {
         Field[] fields = c.getDeclaredFields();
 
         for (Field field : fields) {
-           Exclude an = field.getAnnotation(Exclude.class);
-            if(an == null){
+             // делаем проверку налиция антации, если ее нет, то записываем имя поля его значени и тип
+             // в стринговую переменную forPrint, после чего выводим её на консоль
+            if ( !field.isAnnotationPresent(Exclude.class)) {
             String name = field.getName();
             field.setAccessible(true);
             Object val = field.get(o);
