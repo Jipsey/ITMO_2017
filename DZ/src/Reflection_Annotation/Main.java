@@ -24,9 +24,8 @@ public class Main {
         Class<?> c = o.getClass();
 
         String simpleName ="Class name: "+ c.getSimpleName();
-        // делаем проверку с выводом адреса суперкласса на консоль
-        if(c.getSuperclass()!=null){simpleName = simpleName + "  superclass: " +
-                (c.getSuperclass()).getCanonicalName();}
+
+        if(c.getSuperclass()!=null){simpleName = simpleName +"  superclass: "+ (c.getSuperclass()).getCanonicalName();}
         // делаем проверку на имплементацию интерфейсов, с выводом адреса и имени интерфейса
         if (c.getInterfaces().length > 0){simpleName = simpleName+ " and implements  " +
                 Arrays.toString((c.getInterfaces()));}
@@ -43,14 +42,13 @@ public class Main {
             String name = field.getName();
             field.setAccessible(true);
             Object val = field.get(o);
-            String forPrint = "(" + field.getType().getSimpleName() + ") " + name + " = " + val + "} \n";
-
+            String forPrint = "(" + field.getType().getSimpleName() + ") " + name + " = " + val ;
 
             System.out.print( forPrint );} catch (Exception e){
                     System.err.println("Exception catched " +e.getMessage());
                 }
             }
-        }
+        }   System.out.println("}");
          Class[] classes = c.getClasses();
          if(classes.length>0){
          for (Class cls:classes) {
