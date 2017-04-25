@@ -17,11 +17,11 @@ public static class PizzaMargaritta extends PizzaBuilder{
                 toppings.add(Pizza.Toppings.CHEESE_CAMAMBER);
 
                 pizza.setToppings(toppings);
-                pizza.setPizzaName("Margarita");
+                pizza.setPizzaName(((new PizzaMargaritta()).getClass()).getSimpleName());
                 }
 
     @Override
-    public void buildSauce() { pizza.setSouce(Pizza.Souce.TOMATO_SAUCE);}
+    public void buildSauce() { pizza.setSauce(Pizza.Sauce.TOMATO_SAUCE);}
 }
 
 public static class PizzaNapoli extends PizzaBuilder{
@@ -35,11 +35,11 @@ public static class PizzaNapoli extends PizzaBuilder{
         toppings.add(Pizza.Toppings.CHEESE_GAUDA);
 
         pizza.setToppings(toppings);
-        pizza.setPizzaName("Napoli");
+        pizza.setPizzaName(((new PizzaNapoli()).getClass()).getSimpleName());
     }
 
     @Override
-    public void buildSauce() {pizza.setSouce(Pizza.Souce.MUSHROOM_SAUCE);}
+    public void buildSauce() {pizza.setSauce(Pizza.Sauce.MUSHROOM_SAUCE);}
 
 }
 public static class PizzaFourCheeses extends PizzaBuilder{
@@ -56,11 +56,11 @@ public static class PizzaFourCheeses extends PizzaBuilder{
         toppings.add(Pizza.Toppings.CHEESE_RUSSIAN);
 
         pizza.setToppings(toppings);
-        pizza.setPizzaName("FourCheeses");
+        pizza.setPizzaName(((new PizzaFourCheeses()).getClass()).getSimpleName());
     }
 
     @Override
-    public void buildSauce() {pizza.setSouce(Pizza.Souce.MUSHROOM_SAUCE);
+    public void buildSauce() {pizza.setSauce(Pizza.Sauce.MUSHROOM_SAUCE);
 
     }
 }
@@ -78,11 +78,11 @@ public static class PizzaFourSeasons extends PizzaBuilder {
         toppings.add(Pizza.Toppings.CHEESE_MOZZARELLA);
 
         pizza.setToppings(toppings);
-        pizza.setPizzaName("FourSeasons");
+        pizza.setPizzaName(((new PizzaFourSeasons()).getClass()).getSimpleName());
     }
 
     @Override
-    public void buildSauce() {pizza.setSouce(Pizza.Souce.HOT_CHILLI_SAUCE);
+    public void buildSauce() {pizza.setSauce(Pizza.Sauce.HOT_CHILLI_SAUCE);
 
     }
 }
@@ -100,11 +100,11 @@ public static class PizzaHawaii extends PizzaBuilder{
         toppings.add(Pizza.Toppings.BACON);
 
         pizza.setToppings(toppings);
-        pizza.setPizzaName("Hawaii");
+        pizza.setPizzaName(((new PizzaHawaii()).getClass()).getSimpleName());
     }
 
     @Override
-    public void buildSauce() {pizza.setSouce(Pizza.Souce.CHEESE_SAUCE);
+    public void buildSauce() {pizza.setSauce(Pizza.Sauce.CHEESE_SAUCE);
 
     }
 }

@@ -5,12 +5,12 @@ import java.util.Collection;
 public class Pizza {
     private Dough dough ;
     private Collection <Toppings> toppings;
-    private Souce sauce;
+    private Sauce sauce;
     private String pizzaName;
 
     enum Dough{LAYERED, SOLID}
     enum Toppings{CHEESE_CAMAMBER, CHEESE_GAUDA, BACON, SALAMI, ANANAS, CHEESE_RUSSIAN, CHEESE_MOZZARELLA}
-    enum Souce{TOMATO_SAUCE, CHEESE_SAUCE, HOT_CHILLI_SAUCE, MUSHROOM_SAUCE}
+    enum Sauce{TOMATO_SAUCE, CHEESE_SAUCE, HOT_CHILLI_SAUCE, MUSHROOM_SAUCE}
 
 
     public void setDough(Dough dough) {
@@ -21,7 +21,7 @@ public class Pizza {
         this.toppings = topping;
     }
 
-    public void setSouce(Souce sauce) {
+    public void setSauce(Sauce sauce) {
         this.sauce = sauce;
     }
 
@@ -31,7 +31,7 @@ public class Pizza {
 
     @Override
     public String toString() {
-        return "Pizza "+ pizzaName + " contains: " +
+        return  pizzaName + " contains: " +
                 "dough=" + dough +
                 ", toppings=" + toppings +
                 ", sauce=" + sauce;

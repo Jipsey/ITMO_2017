@@ -3,10 +3,10 @@ package Patterns.Builder;
 abstract public class PizzaBuilder {
 protected Pizza pizza;
 
-public Pizza getPizza() {return this.pizza;}
 
 public void createNewPizza() {this.pizza= new Pizza();}
 
+public Pizza getPizza() {return this.pizza;}
 
 public abstract void buildDough();
 public abstract void buildToppings();
