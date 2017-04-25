@@ -14,7 +14,6 @@ public class Main {
 
     }
 
-
     // создаём аннотацию
     @Target(ElementType.FIELD)
     @Retention(RetentionPolicy.RUNTIME)
@@ -64,6 +63,5 @@ public class Main {
         String str1 = "Hello! I`m class B, subclass of the class A";
         A a ;
     }
-
 
 }
