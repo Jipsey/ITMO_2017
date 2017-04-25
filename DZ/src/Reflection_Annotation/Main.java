@@ -23,14 +23,16 @@ public class Main {
     public static String toString(Object o) {
         Class<?> c = o.getClass();
 
-        String simpleName ="Name of the class: "+ c.getSimpleName();
+        String simpleName ="Class name: "+ c.getSimpleName();
         // делаем проверку с выводом адреса суперкласса на консоль
-        if(c.getSuperclass()!=null){simpleName = simpleName + " ,superclass: " +
+        if(c.getSuperclass()!=null){simpleName = simpleName + "  superclass: " +
                 (c.getSuperclass()).getCanonicalName();}
         // делаем проверку на имплементацию интерфейсов, с выводом адреса и имени интерфейса
         if (c.getInterfaces().length > 0){simpleName = simpleName+ " and implements  " +
                 Arrays.toString((c.getInterfaces()));}
 
+        System.out.println(simpleName);
+        System.out.print("Fields {");
         Field[] fields = c.getDeclaredFields();
 
         for (Field field : fields) {
@@ -41,15 +43,22 @@ public class Main {
             String name = field.getName();
             field.setAccessible(true);
             Object val = field.get(o);
-            String forPrint = "Name of the variable: " + name + ", the value: " + val +
-                    ", type: " + field.getType().getSimpleName();
+            String forPrint = "(" + field.getType().getSimpleName() + ") " + name + " = " + val + "} \n";
 
-            System.out.println( forPrint );} catch (Exception e){
+
+            System.out.print( forPrint );} catch (Exception e){
                     System.err.println("Exception catched " +e.getMessage());
                 }
             }
         }
-        return simpleName;
+         Class[] classes = c.getClasses();
+         if(classes.length>0){
+         for (Class cls:classes) {
+             System.out.println("------------ Inner Class(-es) ------------");
+             toString(cls);
+         }
+         }
+        return "";
     }
 
 
@@ -67,6 +76,11 @@ public class Main {
         double d = 23;
         String str1 = "Hello! I`m class B, subclass of the class A";
         A a ;
+
+        public static class C{
+
+            int x = 13;
+        }
     }
 
 }

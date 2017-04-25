@@ -10,23 +10,29 @@ public class Main {
         Sacrifice sacr = new Sacrifice();
         System.out.println(sacr);
 
-        DIContext.getIstance().changeField(sacr);
+        DIContext.getInstance().changeField(sacr);
         System.out.println(sacr);
 
     }
 
-  public class Source {
+  public static class Source {
       private final int val;
       public Source(){
           val = new Random().nextInt();
       }
 
+      @Override
+      public String toString() {
+          return "Source{" +
+                  "val=" + val +
+                  '}';
+      }
   }
 
 
     public static class Sacrifice {
 
-       @Marker(value = Source.class,makeNewDimension = true)
+       @Marker(Source.class)
        private Source a;
 
        @Marker(Source.class)
@@ -34,7 +40,7 @@ public class Main {
 
        private Source c;
 
-       @Marker(value = Source.class)
+       @Marker(value = Source.class, makeNewDimension = true)
        private Source d;
 
 

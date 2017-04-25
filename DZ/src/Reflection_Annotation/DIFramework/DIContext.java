@@ -10,7 +10,7 @@ public class DIContext {
     private Map<Class,Object> singleton = new HashMap<>();
     private static final DIContext INSTANCE = new DIContext();
 
-    public static DIContext getIstance (){return INSTANCE;}
+    public static DIContext getInstance (){return INSTANCE;}
 
 
     public void changeField(Object obj){
@@ -36,7 +36,7 @@ public class DIContext {
 
     private Object getDependancy(Class<?> type, boolean makeNewDimension){
        Object result = singleton.get(type);
-       if(!makeNewDimension)return result;
+       if(!makeNewDimension && result != null)return result;
         try{ result = type.newInstance();
             singleton.putIfAbsent(type, result);} catch (InstantiationException | IllegalAccessException e){
             e.printStackTrace();
