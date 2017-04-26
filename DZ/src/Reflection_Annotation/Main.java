@@ -21,43 +21,42 @@ public class Main {
 
     }
     public static String toString(Object o) {
+
         Class<?> c = o.getClass();
 
-        String simpleName ="Class name: "+ c.getSimpleName();
+        StringBuilder sb = new StringBuilder("Class name: "+ c.getSimpleName());
 
-        if(c.getSuperclass()!=null){simpleName = simpleName +"  superclass: "+ (c.getSuperclass()).getCanonicalName();}
+        if(c.getSuperclass()!=null){sb.append("\tsuperclass: "+ (c.getSuperclass()).getCanonicalName()+"\t");}
         // делаем проверку на имплементацию интерфейсов, с выводом адреса и имени интерфейса
-        if (c.getInterfaces().length > 0){simpleName = simpleName+ " and implements  " +
-                Arrays.toString((c.getInterfaces()));}
+        if (c.getInterfaces().length > 0){
+            sb.append(" and implements  " + Arrays.toString((c.getInterfaces())));}
 
-        System.out.println(simpleName);
-        System.out.print("Fields {");
         Field[] fields = c.getDeclaredFields();
-
-        for (Field field : fields) {
-             // делаем проверку наличия аннотации, если ее нет, то записываем имя поля его значени и тип
-             // в стринговую переменную forPrint, после чего выводим её на консоль
+         sb.append("Fields: { ");
+         for (Field field : fields) {
+             // делаем проверку наличия аннотации, если ее нет, то добавляем её в Объект StringBuilder "sb"
             if ( !field.isAnnotationPresent(Exclude.class)) {
+                sb.append("(" + field.getType().getSimpleName() + ") " + field.getName());
                 try {
-            String name = field.getName();
             field.setAccessible(true);
             Object val = field.get(o);
-            String forPrint = "(" + field.getType().getSimpleName() + ") " + name + " = " + val ;
-
-            System.out.print( forPrint );} catch (Exception e){
+            sb.append(  " = " + val +", ") ;
+                      }
+                      catch (Exception e){
                     System.err.println("Exception catched " +e.getMessage());
                 }
             }
-        }   System.out.println("}");
+         }   sb.append("}");
          Class[] classes = c.getClasses();
-         if(classes.length>0){
+         if(classes.length<0){return String.valueOf(sb);}
+         else {
          for (Class cls:classes) {
-             System.out.println("------------ Inner Class(-es) ------------");
-             toString(cls);
+            String border =("------------ Inner Class(-es) ------------");
+            sb.append("\n" + border+ "\n" + toString(cls));}
+         }return String.valueOf(sb);
          }
-         }
-        return "";
-    }
+
+
 
 
     static class A {
@@ -78,7 +77,13 @@ public class Main {
         public static class C{
 
             int x = 13;
+
+
         }
+        public static class D{
+            int y=14;
+        }
+
     }
 
 }
