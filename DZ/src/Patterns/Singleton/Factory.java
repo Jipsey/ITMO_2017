@@ -43,6 +43,5 @@ public abstract class Factory implements Car {
        return null;
     }
 
-
 }
 
