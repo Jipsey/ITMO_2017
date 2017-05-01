@@ -13,7 +13,7 @@ public class WordPeace {
         top(s,10);
     }
 
-        static List<String> readWords(File file) throws IOException {
+        public static List<String> readWords(File file) throws IOException {
 
         List <String> lines = Files.readAllLines(file.toPath());
         ArrayList <String> words = new ArrayList<>();
@@ -28,7 +28,6 @@ public class WordPeace {
         }
             System.out.println("Всего слов в книге: " + words.size());
               return words;
-
         }
 
      public static void top(List<String> list,int top){
@@ -43,7 +42,7 @@ public class WordPeace {
                  mapWord.put(word,1);
              }
              // если же входящее слово уже содержится в мапе, то счетчик слов записываем во временное поле cnt,
-             // заме инкрементируем счетчик(cnt++), и уже инкрементированный счетчки заночим в мапу
+             // затем инкрементируем счетчик(cnt++), и уже инкрементированный счетчки заносим в мапу
              else { Integer cnt = mapWord.get(word); cnt++;
                  mapWord.put(word,cnt);
              }
@@ -80,7 +79,7 @@ public class WordPeace {
           // заносим в новую map слова по ключу Integer (длина слова), значением будет HashSet, где элементом будет
           // само слово
          for (String word: list ) {
-                 if (word.length() > 3) { // устанавливаем ограничение длины слова более трёх знаков
+                 if (word.length() > 0) { // устанавливаем ограничение длины слова более трёх знаков
                      HashSet<String> hs = wordsSize.get(word.length());
 
                      if (hs == null)

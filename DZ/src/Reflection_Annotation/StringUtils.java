@@ -35,7 +35,6 @@ public class StringUtils {
     public static void main(String[] args) {
 
         System.out.println(toString(new B()));
-
     }
 
 
@@ -88,27 +87,41 @@ public class StringUtils {
 
 
     static class A {
-        int i = 10;
-        double d = 1.2;
-        String str = "Hello! I`m class A";
+        private int i = 10;
+        private double d = 1.2;
+        private String str = "Hello! I`m class A";
     }
 
     static class B extends A {
 
         @Exclude // помечаем аннотацией поле которое не будем выводить в общем списке, через toString
-        int i = 12;
+        private int i = 12;
+        private double d = 23;
+        private int[] arr ={77,88,99};
+        private String str1 = "Hello! I`m class B, subclass of the class A";
+        private A a = new A() ;
+        private InnerClassC icc = new InnerClassC() ;
 
+        public B(){}
 
-        double d = 23;
+        public B(int i, double d, int[] arr, String str1, A a, InnerClassC icc) {
+            this.i = i;
+            this.d = d;
+            this.arr = arr;
+            this.str1 = str1;
+            this.a = a;
+            this.icc = icc;
+        }
 
-        int[] arr ={77,88,99};
+        public static class InnerClassC{
+           private int x=77;
 
-        String str1 = "Hello! I`m class B, subclass of the class A";
-        A a = new A();
+           public InnerClassC(){}
 
-       public class C{
-          int x = 99;
-      }
+           public InnerClassC(int x) {
+              this.x=x;
+           }
+       }
 
     }
 

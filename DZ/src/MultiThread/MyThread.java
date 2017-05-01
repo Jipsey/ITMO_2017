@@ -1,4 +1,4 @@
-package Thread;
+package MultiThread;
 
 public class MyThread {
 
@@ -14,7 +14,7 @@ public class MyThread {
     public static class InterruptibleThread implements Runnable {
         private int cnt;
 
-
+        @Override
         public void run (){
 
             System.out.printf("Поток %s начал работу!\n", Thread.currentThread().getName());
@@ -22,15 +22,13 @@ public class MyThread {
                 System.out.println("Counter: "+ cnt++);
             try {
                 Thread.sleep(1000);
-
             }
             catch (InterruptedException e){
                 System.err.println("Поток прерван !");
+                return;
             }
             System.out.printf("Поток %s завершил работу\n", Thread.currentThread().getName() );
-
         }
-
         }
     }
 }
