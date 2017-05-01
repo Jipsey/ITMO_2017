@@ -47,16 +47,18 @@ public class WordPeace {
                  mapWord.put(word,cnt);
              }
 
-         }
+         } topForMap(mapWord,top);
+    }
+
 
           //т.к. MAP нельзя отсортировать по значения, создаём АррайЛист и заносим туда ключи+значения,
          // после чего сорируем уже АррайЛист
-
+         public static synchronized void topForMap(Map<String,Integer> mapWord,int top){
          List<Map.Entry<String,Integer>> arrL = new ArrayList<>(mapWord.entrySet());
 
          arrL.sort(new Comparator<Map.Entry<String, Integer>>() {
              @Override
-             public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+             public synchronized int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
                  return Integer.compare(o1.getValue(), o2.getValue());
              }
          });
@@ -78,7 +80,7 @@ public class WordPeace {
          Map <Integer,HashSet<String>> wordsSize = new HashMap <>();
           // заносим в новую map слова по ключу Integer (длина слова), значением будет HashSet, где элементом будет
           // само слово
-         for (String word: list ) {
+         for (String word: mapWord.keySet() ) {
                  if (word.length() > 0) { // устанавливаем ограничение длины слова более трёх знаков
                      HashSet<String> hs = wordsSize.get(word.length());
 
