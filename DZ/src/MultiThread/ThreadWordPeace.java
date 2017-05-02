@@ -3,8 +3,7 @@ package MultiThread;
 import java.io.File;
 import java.util.*;
 
-import static Task_Collections_Map.WordPeace.readWords;
-import static Task_Collections_Map.WordPeace.top;
+import static Task_Collections_Map.WordPeace.*;
 
 
 public class ThreadWordPeace {
@@ -20,6 +19,7 @@ public class ThreadWordPeace {
 
         // создаём список из слов из книги
         List<String> words = readWords(new File("C:\\Education_ITMO\\ITMO_2017\\Storage\\wp.txt"));
+
 
         // создаём аррайлист потоков, длина аррайлиста соответсвует количеству процессоров
         List<Thread> listThread = new ArrayList<>(numProcessors);
@@ -37,20 +37,39 @@ public class ThreadWordPeace {
          for (Thread thread:listThread) { thread.join(); }
 
         System.out.println("Всего операций с мапой: "+twp.num);
-        System.out.println(twp.sharedMap.size());
+
+        System.out.printf("Размер общей мапы: %s слов(а)\n",twp.sharedMap.size());
+        topForMap(twp.sharedMap,10);
+
+//        System.out.println(twp.sharedMap.get("the"));
+
     }
 
     private synchronized void increment(){
         num++;
     }
 
-    private synchronized void conMap (Map<String,Integer> incomingMap){
+    private synchronized Map<String,Integer> makeMap (List<String> words, Map <String,Integer> map){
+
+        for (int i=0; i < words.size(); i++) {
+            String word = words.get(i);
+            if (!map.containsKey(word)) {
+                map.put(word,1); increment();
+            }
+            else { Integer cnt = map.get(word);
+                map.put(word,++cnt); increment();}
+        }
+        //System.out.printf("Поток добавил в мапу key the': %s\n",map.get("the"));
+        return map;
+    }
+
+    private synchronized Map<String,Integer> assembleMap (Map<String,Integer> incomingMap){
         if (sharedMap==null){ for(String str:incomingMap.keySet()){
             sharedMap.putIfAbsent(str,str.indexOf(str));}}
         else {
             for(String str :incomingMap.keySet()){
             sharedMap.compute(str,(key,value)->(value==null)?1:value+incomingMap.get(key));}
-        }
+        } return sharedMap;
     }
 
     class ThreadBook extends Thread{
@@ -59,32 +78,25 @@ public class ThreadWordPeace {
 
 
         public ThreadBook(List<String> words, String name, int parts, int readPartNumber){
+            new Thread(this);
             setName(name);
             separator(words,parts,readPartNumber);
         }
 
-    private void separator (List<String> words,int parts, int readPartNumber){
+    private synchronized void separator (List<String> words,int parts, int readPartNumber){
             Double wordX = (double)words.size()*((double) readPartNumber/(double) parts);
-            Double x = wordX-(words.size()/4);
+            Double x = wordX-(words.size()/parts);
             if(readPartNumber==1){x = x +1;}
             this.words=new ArrayList<>(words.subList(x.intValue()-1,wordX.intValue()));
         }
 
 
         @Override
-        public void  run() {
+        public synchronized void  run() {
+           assembleMap(makeMap(words,map));
 
-                    for (int i=0; i < words.size(); i++) {
-                        String word = words.get(i);
-                        if (!map.containsKey(word)) {
-                            map.put(word,1); increment();
-                        }
-                        else { Integer cnt = map.get(word);
-                               map.put(word,++cnt); increment();}
-
-            }
-            conMap(map);
             System.out.printf("Поток %s создал мапу размером: %s\n",getName(),map.size());
-          }
+
+         }
         }
     }
