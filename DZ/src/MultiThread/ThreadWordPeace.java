@@ -41,7 +41,6 @@ public class ThreadWordPeace {
         System.out.printf("Размер общей мапы: %s слов(а)\n",twp.sharedMap.size());
         topForMap(twp.sharedMap,10);
 
-//        System.out.println(twp.sharedMap.get("the"));
 
     }
 
@@ -59,7 +58,6 @@ public class ThreadWordPeace {
             else { Integer cnt = map.get(word);
                 map.put(word,++cnt); increment();}
         }
-        //System.out.printf("Поток добавил в мапу key the': %s\n",map.get("the"));
         return map;
     }
 
@@ -68,7 +66,7 @@ public class ThreadWordPeace {
             sharedMap.putIfAbsent(str,str.indexOf(str));}}
         else {
             for(String str :incomingMap.keySet()){
-            sharedMap.compute(str,(key,value)->(value==null)?1:value+incomingMap.get(key));}
+            sharedMap.compute(str,(key,value)->(value==null)?incomingMap.get(key):value+incomingMap.get(key));}
         } return sharedMap;
     }
 
@@ -89,7 +87,6 @@ public class ThreadWordPeace {
             if(readPartNumber==1){x = x +1;}
             this.words=new ArrayList<>(words.subList(x.intValue()-1,wordX.intValue()));
         }
-
 
         @Override
         public synchronized void  run() {
