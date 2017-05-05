@@ -1,13 +1,17 @@
 package MultiThread;
 
+import java.io.File;
+import java.io.IOException;
+
 public class MyThread {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
 
         Thread thread = new Thread(new InterruptibleThread());
         thread.start();
         Thread.sleep(3000);
         thread.interrupt();
+
 
     }
 

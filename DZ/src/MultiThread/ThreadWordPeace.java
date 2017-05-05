@@ -44,7 +44,7 @@ public class ThreadWordPeace {
 
     }
 
-    private synchronized void increment(){
+    private void increment(){
         num++;
     }
 
@@ -81,7 +81,7 @@ public class ThreadWordPeace {
             separator(words,parts,readPartNumber);
         }
 
-    private synchronized void separator (List<String> words,int parts, int readPartNumber){
+    private  void separator (List<String> words,int parts, int readPartNumber){
             Double wordX = (double)words.size()*((double) readPartNumber/(double) parts);
             Double x = wordX-(words.size()/parts);
             if(readPartNumber==1){x = x +1;}
@@ -89,7 +89,7 @@ public class ThreadWordPeace {
         }
 
         @Override
-        public synchronized void  run() {
+        public void  run() {
            assembleMap(makeMap(words,map));
 
             System.out.printf("Поток %s создал мапу размером: %s\n",getName(),map.size());
