@@ -91,6 +91,4 @@ public class WordPeace {
                  }
          }
 
-         System.out.println(wordsSize);
-
      } }
