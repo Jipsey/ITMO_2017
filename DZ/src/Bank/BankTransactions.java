@@ -12,9 +12,9 @@ public class BankTransactions {
     private static boolean status = false;
 
 
-    Account losingMoney;
-    Account receivingMoney;
-    int amount;
+    private Account losingMoney;
+    private Account receivingMoney;
+    private int amount;
 
 
     public BankTransactions(Account losingMoney, Account receivingMoney, int amount) {
