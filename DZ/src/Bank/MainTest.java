@@ -6,35 +6,35 @@ import java.util.List;
 
 public class MainTest {
     public static void main(String[] args) {
-        int num =10;
-
-        Account acc = new Account();
+        int num = 10;
+        BankTransactions btr = new BankTransactions();
         List<Thread> listThread = new ArrayList<>(num);
         List<BankTransactions> listTransactions = new ArrayList<>(num);
-         for (Thread thread: listThread){
-             listThread.add(new MailerThread())
+        Account ac = new Account();
 
-         }
+        for (int i = 0; i < num; i++) {
+            listTransactions.add(new BankTransactions(
+                    new Account(i, Account.castName(), 500),
+                    new Account(-i, Account.castName(), 500), 120));
+        }
+
+
+        BankTransactions.makeTransactionsQueue(listTransactions);
+
+        for (int j = 0; j < listTransactions.size(); j++) {
+            listThread.add(btr.new MailerThread("#" + j));
+        }
 
         for (Thread thread : listThread) {
             thread.start();
         }
 
         for (Thread thread : listThread) {
-            thread.join();
-        }
-
-
-        int i=0;
-        for (BankTransactions bt:listTransactions) {
-            listTransactions.add(new BankTransactions(
-                    new Account(i+1,"Alex",500),
-                    new Account(i+2,"Ekaterina",500),120 ));
-                    i++;
-        }
-
-
-
-
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
+}
