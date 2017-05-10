@@ -1,8 +1,6 @@
 package MultiThread.TickTock;
 
-/**
- * Created by Екатерина on 03.05.2017.
- */
+
 class MyThread implements Runnable{
     Thread thrd;
     TickTock ttOb;
@@ -17,7 +15,8 @@ class MyThread implements Runnable{
     @Override
     public void run() {
         if(thrd.getName().compareTo("Tick")==0){
-            for (int i=0;i<5;i++)ttOb.tick(true);
+            for (int i=0;i<5;i++)
+            ttOb.tick(true);
             ttOb.tick(false);
         }
         else{

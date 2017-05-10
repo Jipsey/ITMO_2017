@@ -18,7 +18,7 @@ public class TickTock {
         // после такта "тик"
         try {
             sleep(1000);
-        notify();// позволить выполнять методу tock()
+            notify();// позволить выполнять методу tock()
             while (!state.equals("tocked"))
                 wait(); // ожидать до завершения метода tock()
         }
@@ -36,15 +36,15 @@ public class TickTock {
         System.out.println("Tock");
 
         state = "tocked"; // установить ткущее значение состояние
-                          // после такта "так"
+        // после такта "так"
         try {
             sleep(1000);
-        notify();  // позволить выполняться методу tick()
-        while (!state.equals("ticked"))
-            wait();  // ожидать до завершения метод tick()
-    }catch (InterruptedException exc){
-        System.out.println("Прерывание потока" + exc);
-    }
+            notify();  // позволить выполняться методу tick()
+            while (!state.equals("ticked"))
+                wait();  // ожидать до завершения метод tick()
+        }catch (InterruptedException exc){
+            System.out.println("Прерывание потока" + exc);
+        }
     }
 }
 
