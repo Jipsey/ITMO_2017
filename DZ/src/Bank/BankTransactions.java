@@ -54,7 +54,7 @@ public class BankTransactions {
 
         public MailerThread(String name) {
             setName(name);
-            new Thread(this);
+            new Thread(this) ;
         }
 
         @Override
