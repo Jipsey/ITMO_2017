@@ -12,8 +12,8 @@ public class MyThread {
         Thread.sleep(3000);
         thread.interrupt();
 
-
     }
+
 
     public static class InterruptibleThread implements Runnable {
         private int cnt;
