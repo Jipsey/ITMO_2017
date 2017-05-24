@@ -1,40 +1,23 @@
 package Bank;
 
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 
 public class MainTest {
-    public static void main(String[] args) {
-        int num = 10;
-        BankTransactions btr = new BankTransactions();
-        List<Thread> listThread = new ArrayList<>(num);
-        List<BankTransactions> listTransactions = new ArrayList<>(num);
-        Account ac = new Account();
+    public static void main(String[] args) throws InterruptedException {
 
-        for (int i = 0; i < num; i++) {
-            listTransactions.add(new BankTransactions(
-                    new Account(i, Account.castName(), 500),
-                    new Account(-i, Account.castName(), 500), 120));
-        }
+        int numThreads = 4;
 
+        Bank bank = new Bank(10, 3, numThreads);
 
-        BankTransactions.makeTransactionsQueue(listTransactions);
+        Bank.transfer();
+        Bank.pool.shutdown();
 
-        for (int j = 0; j < listTransactions.size(); j++) {
-            listThread.add(btr.new MailerThread("#" + j));
-        }
+        System.out.println(Thread.activeCount());
+        Bank.printAccountList();  // выводим на консоль все аккаунты;
+        Bank.getTotalBalance();   // выводим на консоль общий баланс всех аккаунтов
 
-        for (Thread thread : listThread) {
-            thread.start();
-        }
-
-        for (Thread thread : listThread) {
-            try {
-                thread.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
     }
 }
