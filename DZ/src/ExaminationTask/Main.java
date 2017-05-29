@@ -42,14 +42,10 @@ public class Main {
         public void run() {
             synchronized (br) {
 
-
                 br.ready();
-
-
-
+            }
         }
     }
-}
 }
 
 

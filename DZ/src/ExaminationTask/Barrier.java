@@ -1,16 +1,17 @@
 package ExaminationTask;
 
-public class Barrier{
+public class Barrier {
     private static int cnt;
+
     public Barrier(int x) {
-        this.cnt = x;
+        cnt = x;
     }
 
-    public static int getCounter() {
+    private static int getCounter() {
         return cnt;
     }
 
-    public static void decrCounter(){
+    private static void decrCounter() {
         cnt--;
     }
 
@@ -19,7 +20,7 @@ public class Barrier{
 
         if (Barrier.getCounter() == 1) {
             System.out.println("через 5 секунд потоки проснуться : )");
-            for (int i = 0; i < 5 ; i++) {
+            for (int i = 0; i < 5; i++) {
 
                 try {
                     Thread.sleep(1000);
@@ -51,5 +52,5 @@ public class Barrier{
     }
 
 
-    }
+}
 
