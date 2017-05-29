@@ -11,7 +11,7 @@ public class Main {
         Barrier br = new Barrier(qtyThreads);
 
         for (int i = 0; i < qtyThreads; i++) {
-            listThread.add(m.new MyThread(br, qtyThreads, "#" + i));
+            listThread.add(m.new MyThread(br, (i + 1) * 1000, "#" + i));
         }
 
         for (Thread thread : listThread) {
@@ -26,26 +26,29 @@ public class Main {
 
 
     public class MyThread extends Thread {
-        int qtyThreads;
         Barrier br;
-        String name;
+        int timeout;
 
-        MyThread(Barrier br, int qtyThreads, String name) {
-            this.qtyThreads = qtyThreads;
+        MyThread(Barrier br, int timeout, String name) {
             this.br = br;
-            this.name = name;
-            new Thread(this);
             setName(name);
+            this.timeout = timeout;
         }
 
         @Override
         public void run() {
-            synchronized (br) {
+            try {
+
+                sleep(timeout);
+
+                System.out.println(getName() + " ready!");
 
                 br.ready();
+
+                System.out.println(getName() + " finished");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }
 }
-
-
