@@ -41,29 +41,15 @@ public class Main {
         @Override
         public void run() {
             synchronized (br) {
-                if (Barrier.getCounter() == 1) {
-                    br.notifyAll();
-                    System.out.println("Поток " + Thread.currentThread().getName() + " разбудил все остальные потоки");
-                }
-                while (Barrier.getCounter() > 1) {
-                    try {
-                        br.decrCounter();
-                        System.out.println("Поток " + Thread.currentThread().getName() +
-                                " зашёл в блок try ");
 
-                        br.wait();
 
-                        System.out.println("Поток " + Thread.currentThread().getName() +
-                                " вышел с паузы и завершает работу");
-                        Thread.currentThread().interrupt();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
+                br.ready();
 
-            }
+
+
         }
     }
+}
 }
 
 
