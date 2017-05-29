@@ -30,6 +30,7 @@ public class Barrier {
                 }
 
             }
+            System.out.println("\n");
             notifyAll();
             System.out.println("Поток " + Thread.currentThread().getName() + " разбудил все остальные потоки");
         }
@@ -48,9 +49,6 @@ public class Barrier {
                 e.printStackTrace();
             }
         }
-
     }
-
-
 }
 
