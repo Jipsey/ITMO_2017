@@ -114,7 +114,10 @@ public class ChatClient {
         System.out.printf("%s: %s => %s\n", FORMAT.format(new Date(msg.getTimestamp())), msg.getSender(), msg.getText());
     }
 
-    private void buildAndSendMessage(String msg) {
+    private void buildAndSendMessage(String msg) throws IOException {
+
+        Filter filter = new Filter("C:\\Filter\\bw.txt");
+        msg = Filter.doFilter(msg);
         Message message = new Message(System.currentTimeMillis(), name, msg);
 
         try {
